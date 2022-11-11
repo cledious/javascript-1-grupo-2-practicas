@@ -45,7 +45,9 @@ for(let i = 0; i < 7; i++) {
     }
 }
 */
-
+/*
+    este codigo lo saque de una pagina ,trate de intentar replicarlo entendiendo lo que hizo ,pero la verdad los demas no se me ocurren como hacerlo con recursividad ,en mi branch que termina -entire ire subiendo todo por aparte
+*/
 function invertirArreglo(arreglo, indice, cadena) {
     return indice == 0 ? cadena : invertirArreglo(arreglo, --indice, (cadena += " " + arreglo[indice]))
 }
