@@ -1,6 +1,6 @@
 //Cree un programa que reciba como parámetro un array de números, y
 //verifique la lista de manera que retorne el número mayor. (Valor: 5pts)
-
+/*
     let listaejercicioUno = (1,2,3,4,5,6,7,8);
     console.log("resultado de ejercicio 1 :" + Math.max(listaejercicioUno));
 
@@ -44,3 +44,13 @@ for(let i = 0; i < 7; i++) {
         console.log(repetidos);
     }
 }
+*/
+
+function invertirArreglo(arreglo, indice, cadena) {
+    return indice == 0 ? cadena : invertirArreglo(arreglo, --indice, (cadena += " " + arreglo[indice]))
+}
+
+let palabra = ["f","r","e","e","C","o","d","e","C","a","m","p"];
+
+let result = invertirArreglo(palabra, palabra.length, '');
+console.log("1" , result);
