@@ -1,46 +1,105 @@
-//Cree un programa que reciba como parámetro un array de números, y
-//verifique la lista de manera que retorne el número mayor. (Valor: 5pts)
-
-    let listaejercicioUno = (1,2,3,4,5,6,7,8);
-    console.log("resultado de ejercicio 1 :" + Math.max(listaejercicioUno));
-
-//-------------------
-
-//Cree un programa que reciba como parámetro una palabra y verifique si
-//dicha palabra es palíndromo, es decir, la palabra se lee igual de izquierda a
-//derecha o de derecha a izquierda, o no. Para la resolución de dicho problema
-//debe utilizar ciclo for . (Valor: 5pts)
-
-//-------------------
-
-//Dada la siguiente matriz [ [1,0,0], [0,1,1], [0,1,0] ], haga un programa que
-//cuente e imprima la cantidad de ceros totales en dicha matriz. Debe utilizar
-//ciclos for (Valor: 10pts)
-
-let matriz = [ [1,0,0], [0,1,1], [0,1,0] ];
-for (let i = 0; i < matriz.length; i++) {
-    for (let j = 0; j < matriz.length; j++) {
-        if (matriz[i][j] === 0) {
-            console.log(matriz[i][j]);
+const data = [
+        {
+        id: 7,
+        email: "michael.lawson@reqres.in",
+        age: 30,
+        userAccount: "Premium",
+        first_name: "Michael",
+        last_name: "Lawson",
+        description: "Lorem ipsum"
+        },
+        {
+        id: 8,
+        email: "lindsay.ferguson@reqres.in",
+        age: 78,
+        userAccount: "Basic",
+        first_name: "Lindsay",
+        last_name: "Ferguson",
+        description: "Lorem ipsum"
+        },
+        {
+        id: 9,
+        email: "tobias.funke@reqres.in",
+        age: 23,
+        userAccount: "Basic",
+        first_name: "Tobias",
+        last_name: "Funke",
+        description: "Lorem ipsum"
+        },
+        {
+        id: 10,
+        email: "byron.fields@reqres.in",
+        age: 86,
+        userAccount: "Basic",
+        first_name: "Byron",
+        last_name: "Fields",
+        description: "Lorem ipsum"
+        },
+        {
+        id: 11,
+        email: "george.edwards@reqres.in",
+        age: 30,
+        userAccount: "Premium",
+        first_name: "George",
+        last_name: "Edwards",
+        description: "Lorem ipsum"
+        },
+        {
+        id: 12,
+        email: "rachel.howell@reqres.in",
+        age: 67,
+        userAccount: "Premium",
+        first_name: "Rachel",
+        last_name: "Howell",
+        description: "Lorem ipsum"
+        },
+        {
+        id: 13,
+        email: "adrian.bell@reqres.in",
+        age: 54,
+        userAccount: "Basic",
+        first_name: "Adrian",
+        last_name: "Bell",
+        description: "Lorem ipsum"
+        },
+        {
+        id: 14,
+        email: "adrian.bell@reqres.in",
+        age: 54,
+        userAccount: "",
+        first_name: "Adrian",
+        last_name: "Bell",
+        description: "Lorem ipsum"
         }
-    }
+    ]
+
+let mainContainer = document.getElementById('mainContainer')
+
+const impUsers = (list) => {
+    const mainContainer = document.getElementById('mainContainer');
+    mainContainer.innerHTML = '';
+
+    data.forEach((user) => {
+        const contenedor = document.createElement('div')
+        const id = document.createElement('h2')
+        const first_name = document.createElement('h3')
+        const last_name = document.createElement('h3')
+        const userAccount = document.createElement('h4')
+        const email = document.createElement('p')
+        const description = document.createElement('p')
+
+        id.textContent = `id: ${user.id}`;
+        first_name.textContent = `first_name: ${user.first_name}`;
+        last_name.textContent = `last_name: ${user.last_name}`;
+        userAccount.textContent = `userAccount: ${user.userAccount}`;
+        email.textContent = `email: ${user.email}`;
+        description.textContent = `description: ${user.description}`;
+
+        contenedor.append(id ,first_name ,last_name ,userAccount ,email ,description);
+        mainContainer.appendChild(contenedor);
+    });
 }
 
-//-------------------
-
-//Cree un programa que reciba un array de números, verifique cuáles números
-//están repetidos y retorne un array con dichos números (los que estan
-//duplicados), si no hay números repetidos en el array debe retornar el
-//siguiente mensaje: “No se encontraron números repetidos en la lista de
-//números recibida”. Debe usar un ciclo for. (Valor: 10pts)
-
-let numeros = [1, 2, 2, 3, 4, 4, 5];
-let repetidos = [""];
-
-for(let i = 0; i < 7; i++) {
-    let outro = numeros[i];
-    if (outro === numeros[i]) {
-        repetidos = numeros.push(outro);
-        console.log(repetidos);
-    }
-}
+console.log(data)
+impUsers(data);
+/*-----------------------------------------------------*/
