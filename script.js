@@ -74,11 +74,8 @@ const data = [
     ]
 
 let mainContainer = document.getElementById('mainContainer')
-
 const impUsers = (list) => {
     const mainContainer = document.getElementById('mainContainer');
-    mainContainer.innerHTML = '';
-
     data.forEach((user) => {
         const contenedor = document.createElement('div')
         const id = document.createElement('h2')
